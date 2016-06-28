@@ -5,10 +5,11 @@ FILE=$2
 SCRATCH_FILE=$3
 
 echo testing download of $FILE...
+echo -----------------------------
 
 # test aws cli
 echo cli test
-time aws s3 cp s3://$BUCKET/$FILE $SCRATCH_FILE
+time eval venv-4/bin/aws s3 cp s3://$BUCKET/$FILE $SCRATCH_FILE
 
 rm $SCRATCH_FILE
 

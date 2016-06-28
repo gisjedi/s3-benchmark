@@ -11,6 +11,8 @@ do
 ./test-cases.sh $BUCKET $FILE $SCRATCH_FILE
 
 # test all above in centos docker
-sudo docker run -it -v /tmp:/tmp -v `pwd`:/root centos:7 bash test-cases.sh $BUCKET $FILE $SCRATCH_FILE
+echo running all tests in docker with bridge networking
+echo ==================================================
+sudo docker run -it -v /tmp:/tmp -v `pwd`:`pwd` centos:7 bash -c "cd `pwd` && bash test-cases.sh $BUCKET $FILE $SCRATCH_FILE"
 
 done

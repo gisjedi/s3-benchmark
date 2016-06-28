@@ -9,4 +9,4 @@ key = bucket.get_key(sys.argv[2])
 
 start_time = time.time()
 key.get_contents_to_filename(sys.argv[3])
-print 'seconds downloading: %s' % (start_time - time.time())
+print 'seconds downloading: %s' % (time.time() - start_time)
